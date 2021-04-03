@@ -1,4 +1,4 @@
-# **`Part of Queen Palace 🏰👑`**
+# [**`Part of Queen Palace 🏰👑`**](https://pub.dev/packages/palace)
 
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 

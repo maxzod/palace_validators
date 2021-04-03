@@ -1,7 +1,7 @@
-import 'package:palace_validators/queen_palace.dart';
+import 'package:palace_validators/palace_validators.dart';
 import 'package:test/test.dart';
 
-void main(List<String> args) {
+void main() {
   test('is valid dto', () => expect(validateDto(GoodDto()), []));
   test(
     'is not valid dto',

@@ -1,15 +1,13 @@
 name: palace_validators
 description: validate classes  with Annotations [part of queen_palace]
-version: 0.0.1
-author:
-homepage: queen
-publish_to: none
+version: 0.0.2
+author: Ahmed masoud
+homepage: https://www.github.com/maxzod/palace_validators
 environment:
   sdk: ">=2.12.0 <3.0.0"
 dependencies:
-  queen_validators:
-    git:
-      url: https://github.com/maxzod/queen_validators.git
+  queen_validators: 0.2.2-beta
+
 dev_dependencies:
   lint: ^1.0.0
   test: ^1.16.8

@@ -28,12 +28,12 @@ List<String> validateDto(Object dto) {
     for (final rule in fieldRules) {
       /// if the validation fails add the field name and
       /// the validation message to the `errors` list
-      if (!rule.validate(fieldValue)) {
+      if (!rule.isValid(fieldValue)) {
         /// extract the field name
         final fieldName = MirrorSystem.getName(field.simpleName);
 
         /// add the error to the list
-        errors.add('$fieldName ${rule.errorMsg}');
+        errors.add('$fieldName ${rule.defaultError}');
       }
     }
   }

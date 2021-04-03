@@ -207,12 +207,10 @@ packages:
   queen_validators:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "226a9b692b968bf48bef9d4d280e62e5c8b402da"
-      url: "https://github.com/maxzod/queen_validators.git"
-    source: git
-    version: "0.2.1"
+      name: queen_validators
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.2-beta"
   shelf:
     dependency: transitive
     description:
