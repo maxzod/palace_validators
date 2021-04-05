@@ -18,8 +18,12 @@ List<String> validateDto(Object dto) {
   /// it will skip it
   for (final field in fields) {
     /// `Iterable<QueenValidationRule>` which contains rules for this field
-    final fieldRulesRef = field.metadata.where((r) => r.reflectee is QueenValidationRule);
-    final fieldRules = fieldRulesRef.map((r) => r.reflectee).toList().cast<QueenValidationRule>();
+    final fieldRulesRef =
+        field.metadata.where((r) => r.reflectee is QueenValidationRule);
+    final fieldRules = fieldRulesRef
+        .map((r) => r.reflectee)
+        .toList()
+        .cast<QueenValidationRule>();
 
     /// get the field value from the object
     final fieldValue = dtoMirror.getField(field.simpleName).reflectee;

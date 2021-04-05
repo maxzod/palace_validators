@@ -57,11 +57,6 @@ print(dtoInstance is SignInDto) // true
 print(dtoInstance.email) // queen@Royal.kingdom
 ```
 
-# TODO
-
-- [ ] add support for isRequired
-- [ ] add support for isOptional
-
 ## License
 
-The Palace-Validators framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Palace-Validators is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
