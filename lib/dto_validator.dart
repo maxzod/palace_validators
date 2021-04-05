@@ -25,15 +25,29 @@ List<String> validateDto(Object dto) {
     final fieldValue = dtoMirror.getField(field.simpleName).reflectee;
 
     /// loop for every rule in the field rule and apply them
-    for (final rule in fieldRules) {
-      /// if the validation fails add the field name and
-      /// the validation message to the `errors` list
-      if (!rule.isValid(fieldValue)) {
-        /// extract the field name
-        final fieldName = MirrorSystem.getName(field.simpleName);
-
-        /// add the error to the list
+    if (fieldValue == null && fieldRules.whereType<IsOptional>().isNotEmpty) {
+      // this is optional rule
+      // and it is null value
+      // so do not apply any rules
+    } else if (fieldValue == null) {
+      /// this felid is null and does not contain any value so it must fill
+      final fieldName = MirrorSystem.getName(field.simpleName);
+      for (final rule in fieldRules) {
         errors.add('$fieldName ${rule.defaultError}');
+      }
+    } else {
+      // this field is not optional and contains value
+
+      for (final rule in fieldRules) {
+        /// if the validation fails add the field name and
+        /// the validation message to the `errors` list
+        if (!rule.isValid(fieldValue)) {
+          /// extract the field name
+          final fieldName = MirrorSystem.getName(field.simpleName);
+
+          /// add the error to the list
+          errors.add('$fieldName ${rule.defaultError}');
+        }
       }
     }
   }
